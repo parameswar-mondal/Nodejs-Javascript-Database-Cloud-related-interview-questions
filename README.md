@@ -3,7 +3,21 @@
  Node.js | Javascript | Database | Cloud 
 ```
 
-## Conceptual Questions
+> ## Basic Node.js interview questions and answers for beginners
+
+### Q: What is Node.js, advantages of Node.js and how does it work?
+
+`Ans:` Node.js is a JavaScript runtime built on Google Chrome's V8 JavaScript engine. It allows developers to run JavaScript on the server-side, which means that it can be used to create scalable, high-performance web applications.
+
+Node.js works on an event-driven, non-blocking I/O model, which means that it uses a single thread to handle multiple connections, without blocking the execution of other requests. This makes it possible to build fast and responsive web applications that can handle large numbers of concurrent connections.
+
+Because Node.js is based on JavaScript, front-end developers who are familiar with JavaScript can easily switch from the client-side to the server-side. It also has a large and strong developer community that has produced a wide range of modules and libraries that may be used to increase its functionalities.
+
+The fact that Node.js is highly modular and can be used to create both server-side and client-side applications is one of its main benefits. Additionally, NPM (Node Package Manager), a built-in package manager, makes it simple to install, manage, and share reusable code libraries.
+
+
+
+> ## Conceptual Questions
 
 ### Q: What is your experience with designing and developing scalable, fault-tolerant, and highly available back-end systems?
 
