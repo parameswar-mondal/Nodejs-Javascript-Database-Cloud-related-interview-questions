@@ -59,6 +59,8 @@ Event-driven programming is particularly useful in Node.js because it allows dev
 
 The Node.js event loop is a fundamental part of the Node.js architecture and is responsible for handling asynchronous I/O operations. The event loop is a loop that continually checks for events in the event queue and executes any associated callback functions.
 
+![Architecture diagram for nodejs event loop](./nodejs-event-loop.png)
+
 The event loop in Node.js consists of several phases, each with a specific set of tasks to perform. The phases of the event loop are:
 
 1. **Timers Phase:** This phase checks the timer queue and executes any callbacks that are due to be executed. Callbacks can be added to the timer queue using the setTimeout() and setInterval() functions.
@@ -76,8 +78,6 @@ The event loop in Node.js consists of several phases, each with a specific set o
 The event loop in Node.js is designed to handle a large number of simultaneous connections and is well-suited for building scalable, high-performance applications. By using an event-driven architecture, Node.js can efficiently handle asynchronous I/O operations, making it an ideal choice for building network applications, real-time systems, and high-performance web servers.
 
 ![Architecture diagram for nodejs event loop](./event-loop-cycle.png)
-
-![Architecture diagram for nodejs event loop](./nodejs-event-loop.png)
 
 ### Q: What is the difference between callback and promise in Node.js?
 `Ans:` Callback functions are used in Node.js to handle asynchronous code execution, while promises are used to handle asynchronous operations and return the results as a resolved or rejected value.
