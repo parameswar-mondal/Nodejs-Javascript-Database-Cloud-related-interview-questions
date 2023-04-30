@@ -445,6 +445,7 @@ The challenges that I faced, such as managing data consistency or optimizing per
 This kind of challenges should be addressed and resolved with the teamwork and collaboration necessary to complete the project successfully, as well as the lessons learned from the experience.
 
 
+-----------------------------------------------------------
 
 > ## Javascript Questions and Answers
 
@@ -668,9 +669,40 @@ sayHelloParam(); // Hello Parameswar Mondal
 sayHelloGabbar(); // Hello Gabbar Sing
 ```
 
+### Q: What is `map`, `filter` and `reducer` functions in Javascript?
+`Ans:` In JavaScript, `map()`, `filter()`, and `reduce()` are three powerful array methods that allow you to perform complex operations on arrays.
+
+1. `map()` - The `map()` method creates a new array by calling a function on each element of the original array. The function should return a new value that will be used as the corresponding element in the new array. Here's an example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+```
+
+2. `filter()` - The `filter()` method creates a new array by testing each element of the original array with a function. The function should return `true` or `false`, and only the elements that pass the test will be included in the new array. Here's an example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const even = numbers.filter(num => num % 2 === 0);
+console.log(even); // Output: [2, 4]
+```
+
+3. `reduce()` - The `reduce()` method applies a function to each element of the array to reduce it to a single value. The function takes two arguments: an accumulator and the current element of the array. The accumulator is initialized with an initial value, and the function is called on each element of the array, updating the accumulator with each iteration. Here's an example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 15
+```
+
+In this example, we start with an initial value of `0` for the accumulator. The function adds each element of the array to the accumulator, and the final value of the accumulator is the sum of all the numbers in the array.
+
+Overall, `map()`, `filter()`, and `reduce()` are powerful array methods that allow you to perform complex operations on arrays with concise and readable code.
 
 
 
+---------------------------------------------------------
 
 > ## Conceptual Questions
 
