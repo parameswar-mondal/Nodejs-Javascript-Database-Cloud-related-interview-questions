@@ -30,41 +30,41 @@ However, caching also introduces the risk of serving stale or outdated data. The
 ### Q: What are the advantages and disadvantages of SQL and NoSQL databases ?
 
 `Ans:` SQL and NoSQL databases each have their own advantages and disadvantages, which are summarized below:
-Advantages of SQL databases:
-SQL databases have been around for many years and are widely used, which means there is a large pool of experienced developers and administrators.
-SQL databases use a well-established standard query language (SQL) that is easy to learn and widely supported.
-SQL databases are highly structured, which makes them well-suited for complex data models and relationships.
-SQL databases provide strong consistency and transaction support, which is important for applications that require strict data integrity and reliability.
+**Advantages of SQL databases:**
+- SQL databases have been around for many years and are widely used, which means there is a large pool of experienced developers and administrators.
+- SQL databases use a well-established standard query language (SQL) that is easy to learn and widely supported.
+- SQL databases are highly structured, which makes them well-suited for complex data models and relationships.
+- SQL databases provide strong consistency and transaction support, which is important for applications that require strict data integrity and reliability.
 
-Disadvantages of SQL databases:
-SQL databases can be difficult to scale horizontally, which can limit their performance and scalability for large-scale applications.
-SQL databases require a fixed schema, which can make it difficult to accommodate changes to the data model.
-SQL databases can be expensive to license and maintain, especially for large enterprise deployments.
-SQL databases can be vulnerable to SQL injection attacks if not properly secured.
+**Disadvantages of SQL databases:**
+- SQL databases can be difficult to scale horizontally, which can limit their performance and scalability for large-scale applications.
+- SQL databases require a fixed schema, which can make it difficult to accommodate changes to the data model.
+- SQL databases can be expensive to license and maintain, especially for large enterprise deployments.
+- SQL databases can be vulnerable to SQL injection attacks if not properly secured.
 
-Advantages of NoSQL databases:
-NoSQL databases are highly scalable and can be easily distributed across multiple servers, making them well-suited for large-scale applications.
-NoSQL databases are schema-less, which makes it easier to accommodate changes to the data model.
-NoSQL databases can handle unstructured or semi-structured data types, such as documents and key-value pairs.
-NoSQL databases are often more flexible and performant than SQL databases for certain use cases, such as high write throughput and real-time data processing.
+**Advantages of NoSQL databases:**
+- NoSQL databases are highly scalable and can be easily distributed across multiple servers, making them well-suited for large-scale applications.
+- NoSQL databases are schema-less, which makes it easier to accommodate changes to the data model.
+- NoSQL databases can handle unstructured or semi-structured data types, such as documents and key-value pairs.
+- NoSQL databases are often more flexible and performant than SQL databases for certain use cases, such as high write throughput and real-time data processing.
 
-Disadvantages of NoSQL databases:
-NoSQL databases are less established and less widely used than SQL databases, which means there may be a smaller pool of experienced developers and administrators.
-NoSQL databases often lack a standard query language, which can make it more difficult to write complex queries and perform ad-hoc analysis.
-NoSQL databases may sacrifice strong consistency in favor of eventual consistency, which can lead to data inconsistencies if not carefully managed.
-NoSQL databases may require more complex data modeling and indexing, which can increase the complexity of application development.
+**Disadvantages of NoSQL databases:**
+- NoSQL databases are less established and less widely used than SQL databases, which means there may be a smaller pool of experienced developers and administrators.
+- NoSQL databases often lack a standard query language, which can make it more difficult to write complex queries and perform ad-hoc analysis.
+- NoSQL databases may sacrifice strong consistency in favor of eventual consistency, which can lead to data inconsistencies if not carefully managed.
+- NoSQL databases may require more complex data modeling and indexing, which can increase the complexity of application development.
 
 ### Q: What is SQL's ACID compliance?
 
-`Ans:` ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. It is a set of properties that guarantee that database transactions are processed reliably and consistently. SQL's ACID compliance ensures that database transactions are processed in a way that guarantees data integrity and reliability.
+`Ans:` ***ACID*** is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. It is a set of properties that guarantee that database transactions are processed reliably and consistently. SQL's ACID compliance ensures that database transactions are processed in a way that guarantees data integrity and reliability.
 
-Atomicity: A transaction is treated as a single, indivisible unit of work, which means that either all of the operations in the transaction are completed successfully, or none of them are. If a transaction fails for any reason, all changes made by that transaction are rolled back, leaving the database in the state it was in before the transaction began.
+**Atomicity:** A transaction is treated as a single, indivisible unit of work, which means that either all of the operations in the transaction are completed successfully, or none of them are. If a transaction fails for any reason, all changes made by that transaction are rolled back, leaving the database in the state it was in before the transaction began.
 
-Consistency: A transaction is processed in a way that ensures that the database remains in a valid state before and after the transaction. This means that any changes made by the transaction must satisfy all constraints and integrity rules defined by the database schema.
+**Consistency:** A transaction is processed in a way that ensures that the database remains in a valid state before and after the transaction. This means that any changes made by the transaction must satisfy all constraints and integrity rules defined by the database schema.
 
-Isolation: Each transaction is executed in isolation from other transactions, which means that the results of a transaction are not visible to other transactions until the transaction has been completed. This ensures that transactions do not interfere with each other and that the database remains consistent.
+**Isolation:** Each transaction is executed in isolation from other transactions, which means that the results of a transaction are not visible to other transactions until the transaction has been completed. This ensures that transactions do not interfere with each other and that the database remains consistent.
 
-Durability: Once a transaction is completed successfully, the changes made by that transaction are permanently stored in the database and will survive system failures, power outages, or any other type of disruption.
+**Durability:** Once a transaction is completed successfully, the changes made by that transaction are permanently stored in the database and will survive system failures, power outages, or any other type of disruption.
 
 In summary, SQL's ACID compliance ensures that database transactions are processed reliably and consistently, and that the data remains accurate and valid even in the face of system failures or other disruptions. This makes SQL databases a popular choice for applications that require strong data consistency and integrity, such as financial systems or e-commerce applications.
 
@@ -116,18 +116,18 @@ To manage dependencies and versions of external libraries and packages in a back
 
 `Ans:` A strong candidate should have experience leading and mentoring a team of back-end developers. They may discuss how they've motivated and supported their team members, provided constructive feedback, and promoted a culture of continuous learning and improvement.
 
-Set clear goals and expectations: As a leader, it's important to set clear goals and expectations for your team. This includes defining project milestones, deadlines, and quality standards.
+**Set clear goals and expectations:** As a leader, it's important to set clear goals and expectations for your team. This includes defining project milestones, deadlines, and quality standards.
 
-Provide regular feedback: Regular feedback is essential for helping team members improve their skills and grow professionally. Provide both positive feedback for accomplishments and constructive feedback for areas that need improvement.
+**Provide regular feedback:** Regular feedback is essential for helping team members improve their skills and grow professionally. Provide both positive feedback for accomplishments and constructive feedback for areas that need improvement.
 
-Foster open communication: Encourage open communication within your team. This includes holding regular team meetings, providing opportunities for feedback, and being approachable and accessible to team members.
+**Foster open communication:** Encourage open communication within your team. This includes holding regular team meetings, providing opportunities for feedback, and being approachable and accessible to team members.
 
-Lead by example: As a leader, it's important to lead by example. This means demonstrating a strong work ethic, a positive attitude, and a commitment to quality and excellence.
+**Lead by example:** As a leader, it's important to lead by example. This means demonstrating a strong work ethic, a positive attitude, and a commitment to quality and excellence.
 
-Encourage collaboration: Encourage collaboration within your team. This includes providing opportunities for pair programming, code reviews, and team brainstorming sessions.
+**Encourage collaboration:** Encourage collaboration within your team. This includes providing opportunities for pair programming, code reviews, and team brainstorming sessions.
 
-Support ongoing learning and development: Encourage ongoing learning and development among team members. This includes providing opportunities for training and development, sharing industry news and trends, and providing mentorship and guidance.
+**Support ongoing learning and development:** Encourage ongoing learning and development among team members. This includes providing opportunities for training and development, sharing industry news and trends, and providing mentorship and guidance.
 
-Recognize and reward achievements: Celebrate the achievements of your team members. This includes acknowledging milestones, giving public recognition for accomplishments, and providing opportunities for growth and advancement.
+**Recognize and reward achievements:** Celebrate the achievements of your team members. This includes acknowledging milestones, giving public recognition for accomplishments, and providing opportunities for growth and advancement.
 
 
