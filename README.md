@@ -188,7 +188,22 @@ To handle errors in Node.js applications, such as implementing error-handling mi
 
 The `package.json` file is used by Node.js to manage the project dependencies and ensure that the correct versions of each dependency are installed. This makes it easy to share the project with other developers, who can easily install all the required dependencies by running a single command.
 
+### Q: What are the global variables in Node.js?
+`Ans:` In Node.js, there are several global variables that are available to all modules without the need for requiring or importing them. These global variables include:
 
+1. `global`: This variable is the global object in Node.js, similar to the `window` object in a web browser. It contains properties and methods that are available globally to all modules.
+
+2. `process`: This variable is an object that provides information about the current Node.js process, such as the command-line arguments, environment variables, and current working directory.
+
+3. `console`: This variable is an object that provides methods for printing messages to the console, such as `console.log()` and `console.error()`.
+
+4. `Buffer`: This variable is a constructor function that provides a way to work with binary data in Node.js, such as reading or writing files in binary mode.
+
+5. `setTimeout`, `setInterval`, and `setImmediate`: These are functions that allow you to schedule code to be executed at a later time or repeatedly at a set interval.
+
+6. `__dirname` and `__filename`: These variables contain the absolute path of the directory and file, respectively, in which the current module is located.
+
+Note that it is generally considered good practice to avoid using global variables in your Node.js code, as it can lead to conflicts and make your code harder to maintain. Instead, it's recommended to use module-level variables and pass them around as needed.
 
 
 > ## Mid-Level Node.js Interview Questions and Answers
@@ -428,6 +443,230 @@ We can optimize performance in a Node.js application, such as using a reverse pr
 The challenges that I faced, such as managing data consistency or optimizing performance, and we addressed those challenges, such as using caching, load balancing, or database sharding. 
 
 This kind of challenges should be addressed and resolved with the teamwork and collaboration necessary to complete the project successfully, as well as the lessons learned from the experience.
+
+
+
+> ## Javascript Questions and Answers
+
+### Q: By default javascript is `synchronous` or `asynchronous`?
+`Ans:` JavaScript is `synchronous` by default, meaning that it executes code in order and blocks other code from executing until it has completed. However, JavaScript also supports `asynchronous` programming through the use of callbacks, promises, and async/await, which allows for non-blocking I/O and efficient handling of time-consuming operations.
+
+### Q: Explain the difference between `var`, `let`, and `const` in JavaScript?
+`Ans:` `var` declares a variable globally or locally to a function, `let` declares a block-scoped variable, and `const` declares a block-scoped constant. The value of a variable declared with `const` cannot be reassigned.
+
+### Q: What is closures in JavaScript? Give an example of when to use them?
+`Ans:`  A closure is the wrapping up of function and it's surrounding variables with in a function or lexical scope. 
+
+In the other way we can say, we can access the outer function scope from the inner function. 
+
+So we can say, closure are created when functions are created. 
+
+Example of closure: 
+```
+function outerMethod() {
+     var name = 'Hello World';
+     function innerMethod() {
+          console.log(name);
+     }
+     innerMethod();
+}
+outerMethod();
+```
+
+So output of the above example is: Hello World
+
+Here the name variable is in the scope of outer function and we are accessing from the inner function. This is closure. 
+
+More understand about closure with it's lexical scoping:  
+
+In JavaScript we can return a function within another function. Please check the below example.
+```
+function outerMethod() {
+     var name = 'Hello World';
+     function innerMethod() {
+          console.log(name);
+     }
+     return innerMethod;
+}
+var result = outerMethod();
+
+console.log(result);
+```
+
+Now guess what will be the output of result ? 
+
+result will return the function, like the below: 
+```
+f innerMethod() {
+     console.log(name);
+}
+```
+
+Now if we call the result function then then what will be the output ?
+```
+result();
+```
+
+Here result variable is holding the "innerMethod" function. And within the function we are using "name" variable. But within the scope of function "name" variable does not declared. So as per this scenario console log output will undefined or null. 
+
+But here also the output will be "Hello World", because of the closure. Because closure already bind both the function and variable within the lexical scope.
+
+### Q: What are global variables in javascript?
+`Ans:` In JavaScript, there are several global variables that are available in all contexts without the need for declaring them. These global variables include:
+
+1. `undefined`: This variable represents the value "undefined", which is the default value for uninitialized variables and function arguments that are not provided.
+
+2. `Infinity` and `-Infinity`: These variables represent positive and negative infinity, respectively.
+
+3. `NaN`: This variable represents the special "not-a-number" value that results from invalid mathematical operations.
+
+4. `Object`, `Array`, `String`, `Number`, `Boolean`, `Function`, `RegExp`, `Date`, and `Error`: These variables are constructor functions that can be used to create objects of the corresponding types.
+
+5. `Math`: This variable is an object that provides mathematical constants and functions, such as `Math.PI` and `Math.sqrt()`.
+
+6. `JSON`: This variable is an object that provides methods for encoding and decoding JSON data.
+
+Note that it is generally considered good practice to avoid creating global variables in your JavaScript code, as it can lead to conflicts and make your code harder to maintain. Instead, it's recommended to use local variables and pass them around as needed.
+
+### Q: What are the difference between `null` and `undefined` in javascript?
+`Ans:` In JavaScript, `null` and `undefined` are both used to represent the absence of a value, but they have slightly different meanings and use cases.
+
+`undefined` is a primitive value that is automatically assigned to variables that are declared but not initialized with a value, function arguments that are not provided, and the return value of a function that does not explicitly return a value. `undefined` can also be explicitly assigned to a variable or property to indicate the absence of a value.
+
+`null`, on the other hand, is a value that represents a deliberate absence of any object value. It is typically used to indicate that a variable or property has no value or that a function returns no value. It can also be used to explicitly assign an empty or non-existent object reference.
+
+Here are some differences between `null` and `undefined`:
+
+1. **Type:** `undefined` is a primitive type, whereas `null` is an object type.
+
+2. **Automatic assignment:** Variables that are declared but not initialized are automatically assigned the value `undefined`, whereas `null` must be assigned explicitly.
+
+3. **Equality comparison:** `null` is equal only to `null` or `undefined`, whereas `undefined` is equal only to `undefined`.
+
+4. **Type conversion:** `undefined` is converted to `NaN` when used in numeric contexts, whereas `null` is converted to `0`.
+
+In general, `undefined` is used to represent an absence of any value, while `null` is used to represent an absence of any object value.
+
+### Q: What is hosting in Javascript?
+`Ans:` In JavaScript, "hosting" refers to the process by which variable and function declarations are moved to the top of their respective scopes by the JavaScript interpreter before the code is executed. This behavior is also sometimes referred to as "hoisting".
+
+During the hosting process, the JavaScript interpreter scans through the code and identifies all variable and function declarations. It then moves these declarations to the top of their respective scopes, which means that they can be used before they are actually declared in the code.
+
+However, it's important to note that only the declarations themselves are moved to the top of the scope, not the actual initialization or assignment of values. So, while a variable or function can be referenced before it is declared, any attempt to access the value of a variable or call a function before it is initialized or assigned will result in an error.
+
+Here is an example of hosting in action:
+
+```
+function example() {
+  console.log(a); // Output: undefined
+  var a = 10;
+  console.log(a); // Output: 10
+}
+
+example();
+```
+
+In this example, the variable `a` is declared and assigned a value of `10` after it is referenced in the first `console.log()` statement. However, due to hosting, the declaration of `a` is moved to the top of the function scope, so the first `console.log()` statement does not result in an error. Instead, it outputs `undefined`, which is the default value for uninitialized variables. The second `console.log()` statement outputs the expected value of `10`.
+
+### Q: What are the new features of ES6?
+`Ans:` ES6 (ECMAScript 2015) introduced several new features to the JavaScript language, including:
+
+1. **let and const** - `let` and `const` provide a new way to declare variables in JavaScript. `let` declares block-scoped variables, while `const` declares block-scoped variables that cannot be reassigned.
+
+2. **Arrow functions** - Arrow functions provide a concise syntax for defining functions in JavaScript, using the `=>` operator. They also automatically bind `this` to the parent context.
+
+3. **Template literals** - Template literals provide a new way to create strings in JavaScript, using backticks (\`\`) instead of quotes. They also support multi-line strings and string interpolation.
+
+4. **Spread operator** - The spread operator (`...`) allows an iterable (like an array) to be expanded in place where multiple arguments (for a function call) or multiple elements (for an array literal) are expected.
+
+5. **Destructuring assignment** - Destructuring assignment allows you to extract data from arrays and objects using a syntax that mirrors the structure of the data.
+
+6. **Classes** - Classes provide a new syntax for defining constructor functions and creating objects with shared methods.
+
+7. **Modules** - ES6 introduced a standard module system for JavaScript, allowing code to be organized into separate files and imported/exported between them.
+
+8. **Promises** - Promises provide a way to handle asynchronous operations in JavaScript, allowing you to chain together actions to be executed once a previous action is complete.
+
+9. **Default parameters** - Default parameters allow you to specify a default value for a function parameter, which will be used if no argument is provided.
+
+10. **Rest parameters** - Rest parameters allow you to pass an arbitrary number of arguments to a function as an array, using the `...` operator.
+
+### Q: `call` vs `bind` vs `apply` in Javascript?
+`Ans:` In JavaScript, `call()`, `bind()`, and `apply()` are methods that allow you to control the value of `this` within a function. They are used to set the value of `this` explicitly when invoking a function, and to pass arguments to the function.
+
+The main differences between these three methods are:
+
+1. `call()` - The `call()` method is used to call a function with a specified `this` value and arguments provided individually. In other words, `call()` sets the value of `this` and allows you to pass arguments as individual values. Here is an example:
+
+```
+function sayHello() {
+  console.log(`Hello, ${this.name}!`);
+}
+
+const person = { name: 'John' };
+
+sayHello.call(person); // Output: Hello, John!
+```
+
+2. `apply()` - The `apply()` method is similar to `call()`, but it takes arguments as an array. In other words, `apply()` sets the value of `this` and allows you to pass arguments as an array. Here is an example:
+
+```
+function sum(a, b) {
+  console.log(a + b);
+}
+
+sum.apply(null, [2, 3]); // Output: 5
+```
+
+3. `bind()` - The `bind()` method is used to create a new function with a specified `this` value and arguments provided individually. In other words, `bind()` creates a new function with the specified `this` value and allows you to pass arguments as individual values. Here is an example:
+
+```
+function multiply(a, b) {
+  console.log(a * b);
+}
+
+const multiplyByTwo = multiply.bind(null, 2);
+multiplyByTwo(5); // Output: 10
+```
+
+In this example, `bind()` creates a new function called `multiplyByTwo` that multiplies its first argument by `2`. When `multiplyByTwo` is called with the argument `5`, it outputs `10`.
+
+Overall, `call()`, `bind()`, and `apply()` are powerful tools for controlling the value of `this` and passing arguments to functions in JavaScript.
+
+**Example:**
+```
+'use strict';
+
+// this binding: Apply vs. Call vs. Bind Examples
+
+// Call: Call invokes the function and allows you to pass in arguments one by one.
+// Apply: Apply invokes the function and allows you to pass in arguments as an array.
+// Bind: Bind returns a new function, allowing you to pass in a this array and any number of arguments.
+
+
+var person1 = { firstName: 'Parameswar', lastName: 'Mondal' };
+var person2 = { firstName: 'Gabbar', lastName: 'Sing' };
+
+function say(greeting) {
+    console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
+}
+
+// Call
+say.call(person1, 'Hello'); // Hello Parameswar Mondal
+say.call(person2, 'Hello'); // Hello Gabbar Sing
+
+
+// Apply
+say.apply(person1, ['Hello']); // Hello Parameswar Mondal
+say.apply(person2, ['Hello']); // Hello Gabbar Sing
+
+
+// Bind
+var sayHelloParam = say.bind(person1, 'Hello');
+var sayHelloGabbar = say.bind(person2, 'Hello');
+sayHelloParam(); // Hello Parameswar Mondal
+sayHelloGabbar(); // Hello Gabbar Sing
+```
 
 
 
