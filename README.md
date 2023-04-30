@@ -989,6 +989,21 @@ This would return the following result:
 ```
 
 
+### Q: Difference between truncate and delete in mysql?
+`Ans:` In MySQL, `TRUNCATE` and `DELETE` are two different ways to remove data from a table, but there are some important differences between them.
+
+The main differences are:
+
+1. **Behavior**: `TRUNCATE` removes all data from a table, while `DELETE` removes only the data that matches the specified conditions in the `WHERE` clause. If you don't specify a `WHERE` clause in a `DELETE` statement, all data in the table will be deleted, but this behavior can be dangerous if you accidentally forget to include the `WHERE` clause.
+
+2. **Speed**: `TRUNCATE` is generally faster than `DELETE` because it removes all data from the table in one operation, while `DELETE` has to check each row to see if it matches the `WHERE` clause before deleting it. However, `TRUNCATE` is also more resource-intensive than `DELETE` because it resets the auto-increment counter and drops any indexes on the table.
+
+3. **Logging**: `TRUNCATE` doesn't log individual row deletions, so it's not possible to recover the data after a `TRUNCATE` operation. `DELETE`, on the other hand, logs each row deletion in the binary log, making it possible to recover the data using point-in-time recovery techniques.
+
+4. **Permissions**: `TRUNCATE` requires the `DROP` privilege on the table, while `DELETE` requires the `DELETE` privilege. If you don't have the necessary privileges, you won't be able to use either command.
+
+In summary, `TRUNCATE` is faster and simpler than `DELETE`, but it's also more dangerous because it removes all data from the table without any conditions. If you want to remove specific rows from a table, `DELETE` is the safer choice because it allows you to specify conditions for which rows to delete. However, if you want to completely remove all data from a table and don't need to recover it later, `TRUNCATE` is a good option.
+
 ### Q: Create database in mongodb?
 `Ans:` To create a database in MongoDB, you can use the `use` command followed by the name of the database you want to create. Here's an example:
 
