@@ -15,6 +15,54 @@ Because Node.js is based on JavaScript, front-end developers who are familiar wi
 
 The fact that Node.js is highly modular and can be used to create both server-side and client-side applications is one of its main benefits. Additionally, NPM (Node Package Manager), a built-in package manager, makes it simple to install, manage, and share reusable code libraries.
 
+***Some of the features of Node.js are:***
+- Asynchronous and event-driven
+- Non-blocking I/O model
+- Lightweight and efficient
+- Cross-platform compatibility
+- Built-in modules for HTTP, TCP, DNS, and more
+- Large and active community of developers and contributors
+
+### Q: In comparison to other back-end technologies, what advantages does Node.js offer?
+
+`Ans:` Node.js has several benefits compared to other back-end technologies, like: 
+
+1. **Speed and Scalability:** Node.js is fast and highly scalable because it is based on an event-driven, non-blocking I/O architecture. This indicates that it can manage many parallels at once without having performance issues.
+
+2. **JavaScript:** Since Node.js is built on top of JavaScript, front-end developers can easily switch from the client-side to the server-side. Additionally, this means that JavaScript can be used on both the client and server sides, which could help in speeding up development and increasing productivity.
+
+3. **NPM:** Node.js has a built-in package manager called NPM (Node Package Manager) that makes it easy to install, manage and share reusable code libraries. This can help to reduce development time and increase productivity.
+
+4. **Large and Active Community:** Node.js has a large and active community of developers who have created a wide range of modules and libraries that can be used to extend its capabilities. This means that developers can easily find and use existing code libraries to speed up development and reduce errors.
+
+5. **Cross-Platform:** Node.js can be used on a wide range of operating systems, including Windows, macOS, and Linux. This makes it a versatile choice for building applications that need to run on multiple platforms.
+
+### Q: What is event-driven programming?
+
+`Ans:` Event-driven programming is a fundamental concept in Node.js, and it's one of the key features that makes Node.js such a powerful platform for building scalable and high-performance applications.
+
+Event-driven programming is particularly useful in Node.js because it allows developers to create non-blocking, asynchronous applications that can handle a large number of concurrent connections without affecting performance. By using event-driven programming, developers can create applications that respond quickly and efficiently to user input, network activity, or other events, which is essential for building scalable and high-performance web applications.
+
+
+### Q: What is a callback function in Node.js?
+`Ans:` A callback function is a function that is passed as an argument to another function and is executed when the original function has completed its task.
+
+### Q: What is an event loop in Node.js?
+`Ans:` Node.js manages asynchronous events through the usage of an event loop. It is a loop that continuously checks the event queue for new events and executes any associated callback functions.
+
+
+### Q: What is the difference between callback and promise in Node.js?
+`Ans:` Callback functions are used in Node.js to handle asynchronous code execution, while promises are used to handle asynchronous operations and return the results as a resolved or rejected value.
+
+### Q: What is the purpose of the "require" keyword in Node.js?
+`Ans:` The `require` keyword is used in Node.js to import modules or packages into the current file.
+
+### Q: What is middleware in Node.js?
+`Ans:` Middleware in Node.js refers to a function that is executed between the request and response phases of an HTTP request-response cycle. It can be used to modify the request or response, or to perform additional processing on the request.
+
+### Q: How to handle errors in Node.js?
+`Ans:` Errors in Node.js can be handled using try-catch blocks or by using the "error" event of the EventEmitter class.
+
 
 
 > ## Conceptual Questions
