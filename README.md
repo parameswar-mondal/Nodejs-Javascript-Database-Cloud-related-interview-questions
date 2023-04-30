@@ -205,6 +205,50 @@ When a promise is created, it starts in a pending state. Once the asynchronous o
 
 In Node.js, promises are implemented using the built-in Promise object, which provides a set of methods for creating, chaining, and handling promises. Many Node.js APIs use promises as the primary way to handle asynchronous operations, including file system operations, network requests, and database interactions.
 
+### Q: `Promise.all()`, `Promise.allSettled()`, and `Promise.race()` in Node.js?
+`Ans:` `Promise.all()`, `Promise.allSettled()`, and `Promise.race()` are all Promise methods that allow you to work with multiple Promises in Node.js.
+
+1. **`Promise.all()`**: This method takes an array of Promises and returns a Promise that resolves with an array of the resolved values from all the Promises, in the same order as the input Promises. If any of the input Promises reject, the entire `Promise.all()` call will reject with the first rejection reason.
+
+Here's an example usage of `Promise.all()`:
+
+```
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.resolve(2);
+const promise3 = Promise.resolve(3);
+
+Promise.all([promise1, promise2, promise3])
+  .then(values => console.log(values)); // Output: [1, 2, 3]
+```
+
+2. **`Promise.allSettled()`**: This method takes an array of Promises and returns a Promise that resolves with an array of objects that describe the state of each Promise, whether it is fulfilled or rejected. Each object has a `status` property that can be either `"fulfilled"` or `"rejected"`, and a `value` or `reason` property that contains the fulfillment value or rejection reason of the Promise.
+
+Here's an example usage of `Promise.allSettled()`:
+
+```
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.reject('error');
+const promise3 = Promise.resolve(3);
+
+Promise.allSettled([promise1, promise2, promise3])
+  .then(results => console.log(results));
+  // Output: [{status: "fulfilled", value: 1}, {status: "rejected", reason: "error"}, {status: "fulfilled", value: 3}]
+```
+
+3. **`Promise.race()`**: This method takes an array of Promises and returns a Promise that resolves or rejects as soon as one of the Promises in the array resolves or rejects. The result of the first Promise to settle is passed to the resolve or reject handler of the `Promise.race()` call.
+
+Here's an example usage of `Promise.race()`:
+
+```
+const promise1 = new Promise(resolve => setTimeout(resolve, 500, 'one'));
+const promise2 = new Promise(resolve => setTimeout(resolve, 100, 'two'));
+
+Promise.race([promise1, promise2])
+  .then(value => console.log(value)); // Output: "two"
+```
+
+Overall, `Promise.all()`, `Promise.allSettled()`, and `Promise.race()` are useful for working with multiple Promises in different scenarios. Use `Promise.all()` when you want to wait for all Promises to resolve, `Promise.allSettled()` when you want to wait for all Promises to settle, and `Promise.race()` when you want to get the result of the first Promise to settle.
+
 ### Q: What are the two main API functions in Node.js?
 `Ans:` Node.js provides two main types of APIs: Core APIs and Third-party APIs. Each of these APIs offers a different set of functions that can be used to build different types of applications. Here, we will focus on the two main API functions in Node.js Core API:
 
