@@ -100,10 +100,10 @@ The event loop in Node.js is designed to handle a large number of simultaneous c
 ### Q: What is the difference between callback and promise in Node.js?
 `Ans:` Callback functions are used in Node.js to handle asynchronous code execution, while promises are used to handle asynchronous operations and return the results as a resolved or rejected value.
 
-### Q: What is the purpose of the "require" keyword in Node.js?
+### Q: What is the purpose of the `require` keyword in Node.js?
 `Ans:` The `require` keyword is used in Node.js to import modules or packages into the current file.
 
-### Q: What is the difference between require and import in Node.js?
+### Q: What is the difference between `require` and `import` in Node.js?
 `Ans:` In Node.js, `require` is a CommonJS module system function used to load modules, while `import` is a newer feature in ECMAScript 6 (ES6) used to load modules in a native way.
 
 Here are some key differences between `require` and `import`:
