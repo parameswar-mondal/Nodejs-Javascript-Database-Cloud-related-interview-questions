@@ -267,7 +267,12 @@ In this example, we create a hash object using the SHA-256 algorithm, update it 
 - OAuth2.0
 
 
+> ## Advanced Node.js Interview Questions and Answers
 
+### Q: Can you explain the difference between synchronous and asynchronous programming in Node.js? When would you choose one over the other?
+`Ans:` The synchronous programming blocks the execution of the program until a task is completed, while asynchronous programming allows the program to continue executing while the task is being processed in the background. 
+
+`Synchronous programming` is appropriate, such as when processing small amounts of data, and when `asynchronous programming` is more suitable, such as when working with I/O operations or large datasets.
 
 
 
