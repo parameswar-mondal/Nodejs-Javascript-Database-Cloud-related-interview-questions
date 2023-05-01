@@ -97,6 +97,33 @@ The event loop in Node.js is designed to handle a large number of simultaneous c
 
 ![Architecture diagram for nodejs event loop](./event-loop-cycle.png)
 
+
+### Q: What is the difference between setImmediate() and setTimeout()?
+`Ans:` setImmediate() is used to execute a function immediately after the current event loop, while setTimeout() is used to execute a function after a specified delay.
+
+### Q: What is `process.nextTick()` in Node.js?
+`Ans:` `process.nextTick()` is a method in Node.js that schedules a callback function to be executed on the next iteration of the event loop. It is similar to `setImmediate()` but has a higher priority, which means the callback function passed to `process.nextTick()` will be executed before any other callbacks queued by `setImmediate()`. 
+
+`process.nextTick()` is often used to defer the execution of a function until the current stack has cleared, allowing the event loop to continue processing other events. This can be useful for preventing stack overflows and ensuring that asynchronous code is executed in the correct order.
+
+Here's an example of how `process.nextTick()` can be used:
+
+```
+function foo() {
+  console.log('foo');
+}
+
+function bar() {
+  console.log('bar');
+}
+
+process.nextTick(foo);
+console.log('start');
+bar();
+```
+
+In this example, `foo()` is scheduled to execute on the next iteration of the event loop using `process.nextTick()`. `start` and `bar` are logged immediately, while `foo` is logged on the next iteration of the event loop after `bar` has finished executing.
+
 ### Q: What is the difference between callback and promise in Node.js?
 `Ans:` Callback functions are used in Node.js to handle asynchronous code execution, while promises are used to handle asynchronous operations and return the results as a resolved or rejected value.
 
@@ -399,9 +426,6 @@ In this example, we create a hash object using the SHA-256 algorithm, update it 
 - Use input validation to prevent injection attacks
 - Implement rate limiting to prevent brute-force attacks
 - Keep all dependencies up to date to prevent security vulnerabilities
-
-### Q: What is the difference between setImmediate() and setTimeout()?
-`Ans:` setImmediate() is used to execute a function immediately after the current event loop, while setTimeout() is used to execute a function after a specified delay.
 
 ### Q: What are streams in Node.js?
 `Ans:` Streams in Node.js are used to handle large amounts of data that cannot fit in memory. They provide a way to read and write data incrementally, in smaller chunks, without loading the entire data into memory.
