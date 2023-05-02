@@ -421,6 +421,55 @@ npm i bcryptjs
 ### Q: What is clustering in Node.js?
 `Ans:` Clustering in Node.js refers to the process of creating multiple worker processes to handle incoming requests, allowing the application to utilize all available CPU cores and improve performance and scalability.
 
+Clustering in Node.js refers to the ability of Node.js to create multiple instances of a single Node.js process, each of which can handle incoming requests independently. This is achieved through the use of the built-in `cluster` module in Node.js.
+
+By using clustering, a Node.js application can take advantage of multi-core CPUs and distribute the workload among the available cores. This can lead to significant performance improvements and increased scalability, as the application can handle more concurrent requests without becoming overwhelmed.
+
+The `cluster` module provides a simple API for creating a cluster of Node.js processes. The master process creates worker processes, which can share server ports to handle incoming requests. The master process can also manage the worker processes, monitor their health, and restart them if they fail.
+
+Clustering can be particularly useful for applications that need to handle a large number of concurrent requests, such as web servers and real-time communication applications. By distributing the workload across multiple processes, the application can handle more requests without becoming a bottleneck.
+
+**Example code snippet for clustering in Node.js:**
+
+```
+const cluster = require('cluster');
+const http = require('http');
+const numCPUs = require('os').cpus().length;
+
+if (cluster.isMaster) {
+  console.log(`Master process ${process.pid} is running`);
+
+  // Fork workers
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  // Listen for dying workers
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`Worker ${worker.process.pid} died with code ${code} and signal ${signal}`);
+    console.log('Starting a new worker');
+    cluster.fork();
+  });
+} else {
+  // Worker process
+  console.log(`Worker process ${process.pid} started`);
+
+  // Create HTTP server and listen on port 3000
+  http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end('Hello world\n');
+  }).listen(3000);
+
+  console.log(`Worker process ${process.pid} listening on port 3000`);
+}
+```
+
+In this example, the main process (identified by `cluster.isMaster`) creates a cluster of worker processes using the `cluster.fork()` method. The number of workers is determined by the `numCPUs` variable, which is set to the number of available CPU cores.
+
+Each worker process listens on port 3000 for incoming HTTP requests, and responds with a simple "Hello world" message. If a worker process dies (e.g., due to an unhandled error), the master process will automatically start a new worker process to replace it.
+
+Note that clustering is most effective when used with Node.js applications that are designed to be stateless, such as web servers. If your application maintains state between requests, clustering may require additional configuration and coordination to ensure that state is properly shared among worker processes.
+
 ### Q: How can we secure a Node.js application?
 `Ans:` Some of the ways to secure a Node.js application are:
 
