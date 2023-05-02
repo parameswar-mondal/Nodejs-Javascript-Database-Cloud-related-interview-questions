@@ -411,7 +411,10 @@ console.log(digest); // Output: 2ef7bde608ce5404e97d5f042f95f89f1c232871dfcc1de4
 
 In this example, we create a hash object using the SHA-256 algorithm, update it with the input string "hello world," and then generate the digest (hash) in hexadecimal format.
 
-
+`Note:` Use `bcryptjs` for password hasing.
+```
+npm i bcryptjs
+```
 
 > ## Advanced Node.js Interview Questions and Answers
 
