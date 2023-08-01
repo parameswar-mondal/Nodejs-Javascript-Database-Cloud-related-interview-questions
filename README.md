@@ -704,6 +704,29 @@ In this example, the variable `a` is declared and assigned a value of `10` after
 
 10. **Rest parameters** - Rest parameters allow you to pass an arbitrary number of arguments to a function as an array, using the `...` operator.
 
+### Q: What are the difference between regular function and arrow function in JavaScript?
+`Ans:`
+In JavaScript, there are two ways to define functions: normal functions and arrow functions. Here are the main differences between them:
+
+1. Syntax: 
+   - Normal functions are defined using the `function` keyword followed by a function name, a parameter list enclosed in parentheses, and the function body enclosed in curly braces. For example: `function myFunction(param1, param2) { ... }`.
+   - Arrow functions have a more concise syntax. They are defined using an arrow (`=>`) between the parameter list and the function body. If the function takes a single parameter, the parentheses around the parameter list can be omitted. If the function body consists of a single expression, the curly braces and `return` keyword can be omitted. For example: `const myFunction = (param1, param2) => { ... }`.
+
+2. Binding of `this`:
+   - Normal functions have their own `this` value, which is determined by how the function is called. The value of `this` inside a normal function depends on the context in which the function is invoked.
+   - Arrow functions, on the other hand, do not bind their own `this` value. Instead, they lexically capture the `this` value of the enclosing scope. In other words, the `this` value inside an arrow function is the same as the `this` value outside the function.
+
+3. Arguments object:
+   - Normal functions have access to the `arguments` object, which is an array-like object containing all the arguments passed to the function. The `arguments` object is not available in arrow functions.
+   - Arrow functions do not have their own `arguments` object. If you need to access the arguments passed to an arrow function, you can use rest parameters (`...args`) to capture them explicitly.
+
+4. Constructor function:
+   - Normal functions can be used as constructor functions by using the `new` keyword. When a normal function is invoked with `new`, it creates a new object and assigns it to `this` inside the function. Arrow functions cannot be used as constructor functions.
+
+5. Use of `return`:
+   - Normal functions can use the `return` statement to explicitly return a value from the function.
+   - Arrow functions have an implicit return behavior. If the function body consists of a single expression, that expression is automatically returned without the need for an explicit `return` statement.
+
 ### Q: `call` vs `bind` vs `apply` in Javascript?
 `Ans:` In JavaScript, `call()`, `bind()`, and `apply()` are methods that allow you to control the value of `this` within a function. They are used to set the value of `this` explicitly when invoking a function, and to pass arguments to the function.
 
